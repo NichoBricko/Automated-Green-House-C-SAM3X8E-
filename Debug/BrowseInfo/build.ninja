@@ -1,0 +1,163 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\delay.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\delay.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Display.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Display.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\exceptions.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\exceptions.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Keypad.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Keypad.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Linkedlist.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Linkedlist.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\main.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\main.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\my_lib.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\my_lib.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Records.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Records.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\startup_sam3x.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\startup_sam3x.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\system_sam3x.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\system_sam3x.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Temperature.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Temperature.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Timestamp.c -xcl_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.xcl -macro_file C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Timestamp.c -o C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.tmp
+  rspfile_name = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.xcl.rsp
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\delay.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Display.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\exceptions.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Keypad.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Linkedlist.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\main.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\my_lib.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Records.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\startup_sam3x.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\system_sam3x.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Temperature.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.pbi : INDEXER C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.xcl |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Timestamp.c
+  flags = -out=C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.pbi -f C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.xcl
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbw : MAKEBROWSE C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbd
+  flags = C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbd -output C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbw
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part0.pbi : PDBLINK C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.pbi |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.pbi
+  flags = -M C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part0.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\delay.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Display.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\exceptions.pbi
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part1.pbi : PDBLINK C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.pbi |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.pbi
+  flags = -M C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part1.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Keypad.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Linkedlist.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\main.pbi
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part2.pbi : PDBLINK C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.pbi |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.pbi
+  flags = -M C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part2.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\my_lib.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Records.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\startup_sam3x.pbi
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part3.pbi : PDBLINK C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.pbi |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.pbi
+  flags = -M C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part3.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\system_sam3x.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Temperature.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\Timestamp.pbi
+
+build C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbd : PDBLINK C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part0.pbi |  $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part1.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part2.pbi $
+C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part3.pbi
+  flags = -M C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project.pbd C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part0.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part1.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part2.pbi C$:\Users\nicho\OneDrive\Documents\DST1_Project\Debug\BrowseInfo\DST1Project_part3.pbi
+
